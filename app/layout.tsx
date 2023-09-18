@@ -3,6 +3,7 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Navbar from './components/Navbar'
+import ThemeButton from './components/ThemeButton'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,11 +24,17 @@ export default function RootLayout({
        <Providers>
 
        <Navbar />
+
+      <ThemeButton/>
+
           <main className='max-w-3xl mx-auto px-4 sm:px-6 lg:px-8'>
             {children}
+            <ThemeButton/>
           </main>
+
+
        </Providers>
-        </body>
+      </body>
     </html>
   )
 }
