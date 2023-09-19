@@ -21,7 +21,7 @@ const heroContent = {
 
 const Hero = () => {
   return (
-    <section className='py-10 ml-10 mr-10'>
+    <section className='py-10'>
         <div className="container px-4 mx-auto">
             <div className='lg:flex justify-between items-center'>
                 <div className='lg:w-5/12 mb-10 lg:mb-0'>
