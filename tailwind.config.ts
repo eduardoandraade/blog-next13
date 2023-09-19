@@ -16,7 +16,7 @@ const config: Config = {
         body: '#667074',
         light: '#F6F6F6',
         yellowLight: '#FFF3D9',
-        greenLigth: '#CCF0EE',
+        greenLight: '#CCF0EE',
         purpleLight: '#AEA3E1'
       },
       backgroundImage: {
