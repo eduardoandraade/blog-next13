@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { BiChevronRight } from 'react-icons/bi'
 
+
 const statContent = {
     stats: [
         {
