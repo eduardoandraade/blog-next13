@@ -2,6 +2,7 @@ import Hero from "./components/Hero";
 import Stats from "./components/Stats"
 import Services from "./components/Services"
 import About from "./components/About";
+import Testimonials from "./components/Testimonials";
 
 
 export default async function IndexPage(){
@@ -13,6 +14,7 @@ export default async function IndexPage(){
         <Stats />
         <Services />
         <About />
+        <Testimonials />
 
     </>
 
