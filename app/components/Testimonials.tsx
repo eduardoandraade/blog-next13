@@ -82,7 +82,7 @@ const Testimonials = () => {
                             if ( idx == 2 ) return null;
 
                             return (
-                            <div className={`bg-white p-7 rounded-lg w-full ${idx == 1 ? "" : "mb-6"}`}>
+                            <div key={idx} className={`bg-white p-7 rounded-lg w-full ${idx == 1 ? "" : "mb-6"}`}>
                                 <div className='flex space-x-4 items-center mb-4'>
                                     <div className='relative'>
                                         <Image src={testimonial.img} width={579} height={720} className='object-cover h-14 w-14 rounded-full' alt='Fotos do Pacientes' />
@@ -107,7 +107,7 @@ const Testimonials = () => {
 
                                 <div>
                                     <blockquote>
-                                        "{testimonial.testimony}"
+                                    &ldquo;{testimonial.testimony}&ldquo;
                                     </blockquote>
                                 </div>
 
@@ -145,7 +145,7 @@ const Testimonials = () => {
                                 </div>
                                     <div>
                                         <blockquote>
-                                            "{testimonialsContent.testimonials[2].testimony}"
+                                        &ldquo;{testimonialsContent.testimonials[2].testimony}&ldquo;
                                         </blockquote>
                                     </div>
                                 </div>
