@@ -65,10 +65,7 @@ export function RecentsBlogs() {
     const sliderRef = useRef(null);
     const [ isBeginning, setIsBeginning ] = useState(null);
 
-    const prevHandler = useCallback(() => {
-        if (!sliderRef.current || !sliderRef.current.swiper) return;
-        sliderRef.current.swiper.slidePrev();
-      }, []);
+    
 
   return (
     <section className="py-20 bg-light overflow-x-hidden">
