@@ -1,59 +1,138 @@
 import React from 'react'
 import Link from "next/link";
+import Image from "next/image";
 import { Post } from "../lib/interface";
 import { client } from "../lib/sanity";
+import { BiChevronRight } from 'react-icons/bi';
 
 async function getData() {
-    const query = `*[_type == "post"]`;
+    const query = `*[_type == "post"] | order(_createdAt desc) [0..3] {
+      title,
+        overview,
+        _id,
+        content,
+        _createdAt,
+        "imageUrl": image.asset->url,
+        slug
+    }`;
   
     const data = await client.fetch(query);
   
     return data;
   }
 
+  const blogContent = {
+    heading: {
+        headingSubTitle: "Postagens Recentes",
+        headingTitle: "Últimas Postagens",
+        description: "Acompanhe nossas últimas postagens para obter informações valiosas sobre urologia e saúde."
+    },
+    cta: {
+        href: "#_",
+        label: "Veja todos os posts",
+        labelSuffix: "clique aqui"
+    }
+  }
+
+  
+
 
 export default async function PostsBlogs (){
 
     const data = await getData() as Post[];
 
+
+    
   return (
-    <div className="ml-2 divide-y divide-gray-200 dark:divide-gray-700">
-    <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-      <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-        Todas as postagens
-      </h1>
-    </div>
+    <section className='pb-20 bg-light overflow-x-hidden'>
+      <div className="container px-4 mx-auto divide-gray-200 dark:divide-gray-700">
+        <div className="lg:w-5/12 mb-10 lg:mb-0">
+                    {blogContent.heading.headingSubTitle && (
+                    <span className="inline-block py-0.5 pl-3 z-50 text-heading font-semibold relative 
+                        mb-5 before:content-[''] before:absolute before:w-2/3 before:bg-yellowLight before:left-0
+                        before:top-0 before:bottom-0 before:-z-10"> 
+                    {blogContent.heading.headingSubTitle}
+                    </span>
+                    )}
 
-    <ul>
-      {data.map((post) => (
-        <li key={post._id} className="py-4">
-          <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
-            <div>
-              <p className="text-base font-medium leading-6 text-red-500">
-                {new Date(post._createdAt).toLocaleDateString('pt-BR')}
-              </p>
-            </div>
 
-            <Link 
-              href={`/post/${post.slug.current}`} 
-              prefetch 
-              className="space-y-3 xl:col-span-2"
-            >
-              <div>
-                <h3 className="text-2xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-100">
-                  {post.title}
-                </h3>
+                    {blogContent.heading.headingTitle && (
+                        <h2 className="text-heading text-2xl lg:text-4xl font-bold mb-5"> 
+                            {blogContent.heading.headingTitle}
+                        </h2>
+                    )}
+
+                    {blogContent.heading.description && (
+                        <p className="text-body leading-relaxed mb-10"> 
+                            {blogContent.heading.description}
+                        </p>
+                    )}
+        </div>
+
+        <div className="grid gap-y-8 sm: sm:grid-cols-4 md:gap-6 lg:grid-col-2 lg:gap-10 pt-8">
+          {data.map((post) => (
+            <article 
+              key={post._id} 
+              className='overflow-hidden dark:border-zinc-600 rounded-lg border border-gray-100 bg-white shadow-lg dark:bg-black dark:shadow-gray-700 show-teal-100'
+              >
+              <div className='h-56 w-full relative'>
+                <Image 
+                  fill 
+                  src={post.imageUrl} 
+                  alt="Capa Postagem Blog" 
+                  className='w-full h-full object-cover'
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 640px, 960px"
+                />
               </div>
 
-              <p className="prose max-w-none text-gray-500 dark:text-gray-400 line-clamp-2">
-                {post.overview}
-              </p>
-            </Link>
-          </article>
-        </li>
-      ))}
-    </ul>
-  </div>
+              <div className='p-4 sm:p-6'>
+                <Link 
+                    href={`/post/${post.slug.current}`} 
+                    prefetch 
+                  >
+                      <h3 className="text-lg font-medium leading-8 text-gray-900 dark:text-white">
+                        {post.title}
+                      </h3>
+                  
+                      <p className="mt-1 text-sm leading-relaxed text-gray-500 dark:text-gray-400 line-clamp-3">
+                        {post.overview}
+                      </p>
+                  </Link>
+
+                  <Link 
+                    href={`/post/${post.slug.current}`}
+                    prefetch
+                    className='group mt-4 inline-flex items-center gap-1 text-sm font-medium text-teal-500'
+                  >
+                    Ler mais
+                    <span className='block transition-all group-hover:ms-0.5'>
+                      &rarr;
+                    </span>
+                  </Link>
+              </div>
+            </article>
+          ))}
+
+        </div>
+
+        <div className='mx-auto mt-20 flex items-center justify-center'>
+          <Link href='/allposts' className='duration-300 transition-all ease-in-out py-3 px-6 flex border rounded-full space-x-3 items-center hover:border-gray-400' >
+            {blogContent.cta.label}{" "}
+            <strong className='text-primary pl-1 font-semibold'>
+              {blogContent.cta.labelSuffix}
+            </strong>
+            <span className='text-gray-300'>|</span>
+            <span className='bg-primary rounded-full w-8 h-8 flex items-center justify-center'>
+              <BiChevronRight className='w-6 h-6 text-white' />
+            </span>
+          </Link>
+
+        </div>
+
+        
+
+    </div>
+    </section>
   )
 }
 

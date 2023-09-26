@@ -14,6 +14,11 @@ export default {
             title: 'Visão Geral',
         },
         {
+            name: 'image',
+            type: 'image',
+            title: 'Image'
+        },
+        {
             name: 'slug',
             type: 'slug',
             title: 'URL',
