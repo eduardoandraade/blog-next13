@@ -12,23 +12,23 @@ import { BiChevronRight } from 'react-icons/bi'
 
 const navigationMenu = [
     {
-        href: '#',
+        href: '#home',
         label: "Inicio",
-    },
+    },  
     {
-        href: '#',
+        href: '#about',
         label: "Sobre Mim",
     },
     {
-        href: '#',
+        href: '#services',
         label: "Consultas",
     },
     {
-        href: '#',
+        href: '/allposts',
         label: "Blog",
     },
     {
-        href: '#',
+        href: '#contact',
         label: "Contato",
     },
 ]
@@ -79,11 +79,11 @@ export default function Navbar(){
                     </div>
 
                     {/* Navigation Menu */}
-                    <div className='hidden lg:block text-center'>
-                        <ul className="flex space-x-7">
+                    <div className='hidden lg:block text-center '>
+                        <ul className="flex space-x-7 ">
                             {navigationMenu.map((item, idx)=> (
-                                <li key={item.label}>
-                                    <Link href={item.href}>{item.label}</Link>
+                                <li className='group' key={item.label}>
+                                    <Link className='group-hover:text-secondary' href={item.href}>{item.label}</Link>
                                 </li>
                             ))}
                         </ul>
@@ -91,7 +91,9 @@ export default function Navbar(){
 
                     {/* CTA */}
                     <div>
-                        <Link href="#" className='px-5 py-4 bg-primary text-white rounded-lg hidden lg:inline-block'>
+                        <Link 
+                        target='blank'
+                        href="https://www.doctoralia.com.br/bruno-ferreira-4/urologista-cirurgiao-geral/fortaleza?utm_source=website&utm_medium=website&utm_campaign=website#highlight-calendar-117681" className='px-5 py-4 bg-primary text-white rounded-lg hidden lg:inline-block'>
                             Agendar Consulta
                         </Link>
 

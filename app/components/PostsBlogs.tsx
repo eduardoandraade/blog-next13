@@ -44,7 +44,7 @@ export default async function PostsBlogs (){
 
     
   return (
-    <section className='pb-20 bg-light overflow-x-hidden'>
+    <section id='posts' className='pb-20 bg-light overflow-x-hidden'>
       <div className="container px-4 mx-auto divide-gray-200 dark:divide-gray-700">
         <div className="lg:w-5/12 mb-10 lg:mb-0">
                     {blogContent.heading.headingSubTitle && (

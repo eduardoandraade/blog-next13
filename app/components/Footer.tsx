@@ -11,7 +11,7 @@ const footerContent = {
         logo: "/images/logo-name-drbruno.svg",
         description: "Com anos de experiência e paixão pela medicina, o Dr. Ferreira oferece serviços de excelência em urologia e cirurgia geral. Navegue pelo nosso site para obter informações úteis sobre procedimentos, agendamento de consultas e recursos educacionais.",
         cta: {
-            href: "#_",
+            href: "#about",
             label: "Saiba mais"
         },
     },
@@ -20,19 +20,19 @@ const footerContent = {
             heading: "Company",
             links: [
                 {
-                    href: "#_",
+                    href: "#home",
                     label: "Inicio"
                 },
                 {
-                    href: "#_",
+                    href: "#about",
                     label: "Sobre Mim"
                 },
                 {
-                    href: "#_",
+                    href: "#services",
                     label: "Consultas"
                 },
                 {
-                    href: "#_",
+                    href: "#testimonials",
                     label: "Depoimentos"
                 }
             ],
@@ -41,15 +41,15 @@ const footerContent = {
             heading: "Recursos",
             links: [
                 {
-                    href: "#_",
+                    href: "#posts-recents",
                     label: "Blog"
                 },
                 {
-                    href: "#_",
+                    href: "#",
                     label: "FAQ"
                 },
                 {
-                    href: "#_",
+                    href: "#contact",
                     label: "Contato"
                 },
                 {
@@ -64,8 +64,9 @@ const footerContent = {
         description: "Sinta-se à vontade para entrar em contato conosco caso tenha alguma dúvida, dúvida ou assistência que possa precisar.",
         address: {
             street: "Rua República do Líbano, 1513 | Fortaleza, Ceará",
-            phone: "+55 85 98113-7575",
-            website: "drbrunoferreira.com.br"
+            phone1: "+55 85 98113-7575",
+            phone2: "+55 85 98140-7575",
+            website: "www.drbrunoferreira.com.br"
         }
     },
     copyright: {
@@ -106,7 +107,7 @@ const Footer = () => {
                                 </h3>
                                 <ul className='p-0 m-0'>
                                     {footerLink.links.map((link, idx) => (
-                                        <li key={idx} className='mb-3'>
+                                        <li key={link.label} className='mb-3'>
                                             <Link href={link.href}
                                             className='group-flex items-center duration-300 transition-all ease-in-out hover:text-primary'
                                             >
@@ -138,7 +139,12 @@ const Footer = () => {
                         <li className='flex items-start space-x-3 mb-5'>
                             <HiPhone className='text-xl text-primary' 
                             />
-                            <span>{footerContent.contact.address.phone}</span>
+                            <span>{footerContent.contact.address.phone1}</span>
+                        </li>
+                        <li className='flex items-start space-x-3 mb-5'>
+                            <HiPhone className='text-xl text-primary' 
+                            />
+                            <span>{footerContent.contact.address.phone2}</span>
                         </li>
                         <li className='flex items-start space-x-3 mb-5'>
                             <HiMiniGlobeAmericas className='text-xl text-primary' 

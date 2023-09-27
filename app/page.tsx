@@ -4,6 +4,7 @@ import Services from "./components/Services"
 import About from "./components/About";
 import Testimonials from "./components/Testimonials";
 import PostsBlogs from "./components/PostsBlogs";
+import Contact from "./components/Contact";
 
 
 export default async function IndexPage(){
@@ -15,6 +16,7 @@ export default async function IndexPage(){
         <Services />
         <About />
         <Testimonials />
+        <Contact />
         <PostsBlogs />
     </>
 

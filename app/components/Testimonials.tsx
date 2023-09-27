@@ -8,7 +8,7 @@ const testimonialsContent = {
         headingTitle: "O que nossos pacientes têm a dizer",
         description: "Palavras reais, resultados reais. Leia o que nossos pacientes têm a dizer sobre a qualidade de nossos serviços e tratamentos.",
         cta: {
-            cta_href: "#_",
+            cta_href: "https://api.whatsapp.com/send/?phone=5585981137575&text=Ol%C3%A1%2C+gostaria+de+marcar+uma+consulta&type=phone_number&app_absent=0",
             cta_label: "Agendar Consulta"
         }
     },
@@ -36,7 +36,7 @@ const testimonialsContent = {
 
 const Testimonials = () => {
   return (
-    <section className='py-20 bg-light'>
+    <section id='testimonials' className='py-20 bg-light'>
         <div className='container px-4 mx-auto'>
             <div className='lg:flex justify-between items-center'>
                 <div className='lg:w-4/12 lg:pr-24 mb-10 lg:mb-0'>
@@ -63,7 +63,7 @@ const Testimonials = () => {
 
                     {testimonialsContent.heading.cta.cta_label && (
                         <p>
-                            <Link href={testimonialsContent.heading.cta.cta_href}
+                            <Link target='blank' href={testimonialsContent.heading.cta.cta_href}
                                 className='py-4 px-5 bg-primary text-white rounded-lg duration-300 transition-all ease-in-out hover:bg-[#134761] hover:shadow-lg inline-block relative top-0 hover:-top-1'>
                                 {testimonialsContent.heading.cta.cta_label}
                             </Link>
@@ -150,7 +150,7 @@ const Testimonials = () => {
                                     </div>
                                 </div>
                             
-                                <div className='bg-[#F27763] hidden md:inline-block w-10 h-10 lg:w-24 lg:h-24 rounded-2xl rounded-bl-[200px]'></div>
+                                <div className='bg-blueLight hidden md:inline-block w-10 h-10 lg:w-24 lg:h-24 rounded-2xl rounded-bl-[200px]'></div>
                         </div>
                     </div>
                 </div>

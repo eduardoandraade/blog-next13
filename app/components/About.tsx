@@ -24,20 +24,19 @@ const aboutContent = {
         ],
         cta: {
             btn1: {
-                href: "#_",
+                href: "https://api.whatsapp.com/send/?phone=5585981137575&text=Ol%C3%A1%2C+gostaria+de+marcar+uma+consulta&type=phone_number&app_absent=0",
                 label: "Agendar Consulta"
             },
             btn2: {
-                href: "#_",
+                href: "#services",
                 label: "Serviços"
             },
         }
     },
     images: {
-        img1: "/images/about-img1.jpg",
-        img2: "/images/about-img2.jpg",
-        img3: "/images/about-img3.jpg",
-
+        img1: "/images/img-1.svg",
+        img2: "/images/img-2.svg",
+        img3: "/images/img-3.svg",
     },
     experience: {
         year: "+20",
@@ -47,10 +46,10 @@ const aboutContent = {
 
 const About = () => {
   return (
-    <section className='py-20 bg-light overflow-x-hidden'>
+    <section id='about' className='py-20 bg-light overflow-x-hidden'>
         <div className='container px-4 mx-auto'>
             <div className='lg:flex space-x-2 justify-between'>
-                <div className="lg:w-6/12 relative mb-10 lb:mb-0 z-10 before:-[''] before:absolute before:w-screen before:right-1/2 before:rounded-tr-[200px] before:z-[-1] before:rounded-br-3xl before:py-28 before:-top-20 before:bg-white before:-bottom-20">
+                <div className="lg:w-6/12 relative mb-10 lb:mb-0 z-10 before:-[''] before:absolute before:w-screen before:right-1/2 before:rounded-tr-[200px] before:z-[-1] before:rounded-br-3xl before:py-28 before:-top-20 before:bg-primary before:-bottom-20">
                     <div className="flex gap-2">
                         <div className='flex flex-col space-y-2'>
                             <div>
@@ -58,8 +57,8 @@ const About = () => {
                             </div>
                             <div className='flex justify-end gap-'>
                                 <div className="w-4/12 flex">
-                                    <div className='ml-auto'>
-                                        <div className='bg-greenLight w-10 h-10 lg:w-24 lg:h-24 rounded-2xl rounded-bl-[200px]'></div>
+                                    <div className='ml-2'>
+                                        <div className='bg-primary w-10 h-10 lg:w-24 lg:h-24 rounded-2xl rounded-bl-[200px]'></div>
                                     </div>
                                 </div>
                                 <div className="w-6/12">
@@ -71,7 +70,7 @@ const About = () => {
                         <div className='mt-auto'>
                             <div className="flex flex-col gap-2">
                                 <div>
-                                    <div className="bg-purpleLight w-10 h-10 lg:w-20 lg:h-20 rounded-2xl rounded-tr-[200px]"></div>
+                                    <div className="bg-primary w-10 h-10 lg:w-20 lg:h-20 rounded-2xl rounded-tr-[200px]"></div>
                                 </div>
                                 <div>
                                     <Image src={aboutContent.images.img2} alt='Fotos Dr Bruno Ferreira' width={547} height={573} 
@@ -126,7 +125,7 @@ const About = () => {
 
 
                     <div className='flex space-x-3'>
-                        <Link href={aboutContent.text.cta.btn1.href} className='py-4 px-5 bg-primary text-white rounded-lg duration-300 transition-all ease-in-out hover:bg-[#134761]
+                        <Link target='blank' href={aboutContent.text.cta.btn1.href} className='py-4 px-5 bg-primary text-white rounded-lg duration-300 transition-all ease-in-out hover:bg-[#134761]
                         hover:shadow-lg inline-block relative top-0 hover:-top-1'>{aboutContent.text.cta.btn1.label}</Link>
 
                         <Link href={aboutContent.text.cta.btn2.href} className='py-4 px-5 bg-secondary text-white rounded-lg duration-300 transition-all ease-in-out hover:bg-[#179792]
