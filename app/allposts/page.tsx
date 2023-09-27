@@ -101,3 +101,5 @@ export default async function Page(){
     </section>
   )
 }
+
+export const revalidate = 60;
