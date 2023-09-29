@@ -41,8 +41,8 @@ const Hero = () => {
                     {heroContent.text.subheading && (
                     <span 
                     data-aos="fade-up"
-                    className="inline-block py-0.5 pl-3 text-heading font-semibold relative 
-                    mb-7 before:content-[''] before:absolute before:w-2/3 before:bg-yellowLight before:left-0
+                    className="inline-block py-0.5 text-heading font-semibold relative 
+                    mb-7 before:content-[''] before:absolute before:w-2/3 before:left-0
                     before:top-0 before:bottom-0 before:z-[-1]"> {heroContent.text.subheading}</span>)}
 
                     {heroContent.text.heading && (<h1 data-aos="fade-up" data-aos-delay="100" className='text-4xl mb-7 lg:text-5xl font-bold text-heading'>
@@ -64,6 +64,9 @@ const Hero = () => {
                         <Link href='#about' className='py-4 px-5 bg-secondary text-white rounded-lg duration-300 transition-all ease-in-out hover:bg-[#179792]
                         hover:shadow-lg inline-block relative top-0 hover:-top-1'>Saiba Mais</Link>
                     </div>
+
+
+                    
                 </div>
 
                 <div className='lg:w-6/12 space-y-2'>

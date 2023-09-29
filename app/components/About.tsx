@@ -37,6 +37,7 @@ const aboutContent = {
         img1: "/images/img-1.svg",
         img2: "/images/img-2.svg",
         img3: "/images/img-3.svg",
+        img4: "/images/img-6.svg"
     },
     experience: {
         year: "+20",
@@ -77,25 +78,35 @@ const About = () => {
                                         className='object-cover h-full w-full rounded-lg shadow-2xl'/>
                                 </div>
 
-                                {aboutContent.experience.label && (
-                                    <div className='p-4 lg:p-10 shadow-2xl rounded-lg bg-white w-full leading-5'>
-                                        <strong className='block font-bold text-primary text-xl lg:text-5xl'>
-                                            {aboutContent.experience.year}
-                                        </strong>
-                                        <span>
-                                            {aboutContent.experience.label}
-                                        </span>
-                                    </div>
-                                )}
+                                <div className='w-7/12 pt-1'>
+                                    <Image src={aboutContent.images.img4} alt='Fotos Dr Bruno Ferreira' width={547} height={573} 
+                                        className='object-cover h-full w-full rounded-lg shadow-2xl'/>
+                                </div>
+
+                                {
+                                    /*
+                                        {aboutContent.experience.label && (
+                                            <div className='p-4 lg:p-10 shadow-2xl rounded-lg bg-white w-full leading-5'>
+                                                <strong className='block font-bold text-primary text-xl lg:text-5xl'>
+                                                    {aboutContent.experience.year}
+                                                </strong>
+                                                <span>
+                                                    {aboutContent.experience.label}
+                                                </span>
+                                            </div>
+                                        )}                                
+                                    */
+                                }
+
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="lg:w-5/12 relative z-10">
                     {aboutContent.text.headginSubTitle && (
-                        <span className="inline-block py-0.5 pl-3 z-50 text-heading font-semibold relative 
-                                mb-5 before:content-[''] before:absolute before:w-2/3 before:bg-yellowLight before:left-0
-                                before:top-0 before:bottom-0 before:-z-10"> 
+                        <span className="inline-block py-0.5 z-50 font-semibold relative 
+                                mb-5 before:content-[''] before:absolute before:w-2/3 before:left-0
+                                before:top-0 before:bottom-0 before:-z-10 text-white md:text-heading lg:text-red"> 
                             {aboutContent.text.headginSubTitle}
                         </span>
                     )}

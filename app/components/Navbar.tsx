@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
-import logo from '../../public/images/logo-name-drbruno.svg'
+import logo from '../../public/images/logo-drbruno.png'
 import { HiBars3 } from 'react-icons/hi2';
 import { GrClose } from 'react-icons/gr'
 import { BiChevronRight } from 'react-icons/bi'
@@ -12,15 +12,15 @@ import { BiChevronRight } from 'react-icons/bi'
 
 const navigationMenu = [
     {
-        href: '#home',
+        href: '/#home',
         label: "Inicio",
     },  
     {
-        href: '#about',
+        href: '/#about',
         label: "Sobre Mim",
     },
     {
-        href: '#services',
+        href: '/#services',
         label: "Consultas",
     },
     {
@@ -28,7 +28,7 @@ const navigationMenu = [
         label: "Blog",
     },
     {
-        href: '#contact',
+        href: '/#contact',
         label: "Contato",
     },
 ]
@@ -69,12 +69,12 @@ export default function Navbar(){
 
         <>
          <header className="py-7">
-            <div className="container px-4 mx-auto">
+            <div className="container px-4 mx-auto bg-white">
                 <div className="flex justify-between items-center">
                     {/* Logo */}
                     <div>
                         <Link href="/">
-                            <Image src={logo} width={180} height={120} alt='Logo Dr Bruno Ferreira'/>
+                            <Image src={logo} width={60} height={60} alt='Logo Dr Bruno Ferreira'/>
                         </Link>
                     </div>
 

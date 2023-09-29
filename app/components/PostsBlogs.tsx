@@ -45,11 +45,11 @@ export default async function PostsBlogs (){
     
   return (
     <section id='posts' className='pb-20 bg-light overflow-x-hidden'>
-      <div className="container px-4 mx-auto divide-gray-200 dark:divide-gray-700">
+      <div className="container px-4 mx-auto divide-gray-200">
         <div className="lg:w-5/12 mb-10 lg:mb-0">
                     {blogContent.heading.headingSubTitle && (
-                    <span className="inline-block py-0.5 pl-3 z-50 text-heading font-semibold relative 
-                        mb-5 before:content-[''] before:absolute before:w-2/3 before:bg-yellowLight before:left-0
+                    <span className="inline-block py-0.5 z-50 text-heading font-semibold relative 
+                        mb-5 before:content-[''] before:absolute before:w-2/3 before:left-0
                         before:top-0 before:bottom-0 before:-z-10"> 
                     {blogContent.heading.headingSubTitle}
                     </span>
@@ -73,7 +73,7 @@ export default async function PostsBlogs (){
           {data.map((post) => (
             <article 
               key={post._id} 
-              className='overflow-hidden dark:border-zinc-600 rounded-lg border border-gray-100 bg-white shadow-lg dark:bg-black dark:shadow-gray-700 show-teal-100'
+              className='overflow-hidden rounded-lg border border-gray-100 bg-white shadow-lg show-teal-100'
               >
               <div className='h-56 w-full relative'>
                 <Image 
@@ -90,11 +90,11 @@ export default async function PostsBlogs (){
                     href={`/post/${post.slug.current}`} 
                     prefetch 
                   >
-                      <h3 className="text-lg font-medium leading-8 text-gray-900 dark:text-white">
+                      <h3 className="text-lg font-medium leading-8 text-gray-900 ">
                         {post.title}
                       </h3>
                   
-                      <p className="mt-1 text-sm leading-relaxed text-gray-500 dark:text-gray-400 line-clamp-3">
+                      <p className="mt-1 text-sm leading-relaxed text-gray-500 line-clamp-3">
                         {post.overview}
                       </p>
                   </Link>

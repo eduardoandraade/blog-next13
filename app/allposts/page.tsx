@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
-import { BiChevronRight } from 'react-icons/bi';
 import { Post } from '../lib/interface';
 import { client } from '../lib/sanity';
 
@@ -36,7 +35,7 @@ export default async function Page(){
 
   return (
     <section className='pb-20 overflow-x-hidden'>
-      <div className='container px-4 mx-auto text-center divide-gray-200 dark:divide-gray-700'>
+      <div className='container px-4 mx-auto text-center divide-gray-200'>
 
                     {blogContent.heading.headingTitle && (
                         <h2 className="text-heading text-2xl lg:text-4xl font-bold mb-5"> 
@@ -55,7 +54,7 @@ export default async function Page(){
           {data.map((post) => (
             <article 
               key={post._id} 
-              className='overflow-hidden dark:border-zinc-600 rounded-lg border border-gray-100 bg-white shadow-lg dark:bg-black dark:shadow-gray-700 show-teal-100'
+              className='overflow-hidden rounded-lg border border-gray-100 bg-white shadow-lg  show-teal-100'
               >
               <div className='h-56 w-full relative'>
                 <Image 
@@ -72,11 +71,11 @@ export default async function Page(){
                     href={`/post/${post.slug.current}`} 
                     prefetch 
                   >
-                      <h3 className="text-lg font-medium leading-8 text-gray-900 dark:text-white">
+                      <h3 className="text-lg font-medium leading-8 text-gray-900">
                         {post.title}
                       </h3>
                   
-                      <p className="mt-1 text-sm leading-relaxed text-gray-500 dark:text-gray-400 line-clamp-3">
+                      <p className="mt-1 text-sm leading-relaxed text-gray-500 line-clamp-3">
                         {post.overview}
                       </p>
                   </Link>

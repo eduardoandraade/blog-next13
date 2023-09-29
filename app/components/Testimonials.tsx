@@ -41,8 +41,8 @@ const Testimonials = () => {
             <div className='lg:flex justify-between items-center'>
                 <div className='lg:w-4/12 lg:pr-24 mb-10 lg:mb-0'>
                     {testimonialsContent.heading.headingSubTitle && (
-                        <span className="inline-block py-0.5 pl-3 z-50 text-heading font-semibold relative 
-                                mb-5 before:content-[''] before:absolute before:w-2/3 before:bg-yellowLight before:left-0
+                        <span className="inline-block py-0.5 z-50 text-heading font-semibold relative 
+                                mb-5 before:content-[''] before:absolute before:w-2/3 before:left-0
                                 before:top-0 before:bottom-0 before:-z-10"> 
                             {testimonialsContent.heading.headingSubTitle} 
                         </span>
