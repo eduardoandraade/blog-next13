@@ -68,41 +68,42 @@ export default function Navbar(){
     return (
 
         <>
-         <header className="py-7">
-            <div className="container px-4 mx-auto bg-white">
-                <div className="flex justify-between items-center">
-                    {/* Logo */}
-                    <div>
-                        <Link href="/">
-                            <Image src={logo} width={60} height={60} alt='Logo Dr Bruno Ferreira'/>
-                        </Link>
-                    </div>
+         <header className="">
+                <div className="w-full px-4 py-4 mx-auto fixed z-50 bg-white shadow-sm">
+                    <div className="flex justify-between items-center">
+                        {/* Logo */}
+                        <div>
+                            <Link href="/">
+                                <Image src={logo} width={60} height={60} alt='Logo Dr Bruno Ferreira'/>
+                            </Link>
+                        </div>
 
-                    {/* Navigation Menu */}
-                    <div className='hidden lg:block text-center '>
-                        <ul className="flex space-x-7 ">
-                            {navigationMenu.map((item, idx)=> (
-                                <li className='group' key={item.label}>
-                                    <Link className='group-hover:text-secondary' href={item.href}>{item.label}</Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                        {/* Navigation Menu */}
+                        <div className='hidden lg:block text-center '>
+                            <ul className="flex space-x-7 ">
+                                {navigationMenu.map((item, idx)=> (
+                                    <li className='group' key={item.label}>
+                                        <Link className='group-hover:text-secondary' href={item.href}>{item.label}</Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
 
-                    {/* CTA */}
-                    <div>
-                        <Link 
-                        target='blank'
-                        href="https://www.doctoralia.com.br/bruno-ferreira-4/urologista-cirurgiao-geral/fortaleza?utm_source=website&utm_medium=website&utm_campaign=website#highlight-calendar-117681" className='px-5 py-4 bg-primary text-white rounded-lg hidden lg:inline-block'>
-                            Agendar Consulta
-                        </Link>
+                        {/* CTA */}
+                        <div>
+                            <Link 
+                            target='blank'
+                            href="https://www.doctoralia.com.br/bruno-ferreira-4/urologista-cirurgiao-geral/fortaleza?utm_source=website&utm_medium=website&utm_campaign=website#highlight-calendar-117681" className='px-5 py-4 bg-primary text-white rounded-lg hidden lg:inline-block'>
+                                Agendar Consulta
+                            </Link>
 
-                        <button className='block lg:hidden' onClick={mobileMenuHandler}>
-                            <HiBars3 className='text-3xl' />
-                        </button>
+                            <button className='block lg:hidden' onClick={mobileMenuHandler}>
+                                <HiBars3 className='text-3xl' />
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
+            
          </header>
 
          {/* for Mobile/Tablet Devices Nav Menu*/}

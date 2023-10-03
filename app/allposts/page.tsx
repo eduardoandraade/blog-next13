@@ -35,10 +35,10 @@ export default async function Page(){
 
   return (
     <section className='pb-20 overflow-x-hidden'>
-      <div className='container px-4 mx-auto text-center divide-gray-200'>
+      <div className='container px-4 py-1 mx-auto text-center divide-gray-200 mt-20'>
 
                     {blogContent.heading.headingTitle && (
-                        <h2 className="text-heading text-2xl lg:text-4xl font-bold mb-5"> 
+                        <h2 className="text-heading text-2xl lg:text-4xl font-bold mb-5 mt-20"> 
                             {blogContent.heading.headingTitle}
                         </h2>
                     )}

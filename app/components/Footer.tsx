@@ -2,14 +2,16 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { BiChevronRight } from 'react-icons/bi'
+import { BiChevronRight, BiLogoYoutube } from 'react-icons/bi'
 import { HiLocationMarker } from 'react-icons/hi'
-import { HiPhone, HiMiniGlobeAmericas, HiMiniHeart } from 'react-icons/hi2'
+import { AiFillInstagram } from 'react-icons/ai'
+import { HiPhone, HiMiniGlobeAmericas } from 'react-icons/hi2'
+
 
 const footerContent = {
     about: {
-        logo: "/images/logo-name-drbruno.svg",
-        description: "Com anos de experiência e paixão pela medicina, o Dr. Ferreira oferece serviços de excelência em urologia e cirurgia geral. Navegue pelo nosso site para obter informações úteis sobre procedimentos, agendamento de consultas e recursos educacionais.",
+        logo: "/images/logo-horizontal.png",
+        description: "Confiança e credibilidade no tratamento. Previna-se! Em nosso site, você encontra informações sobre pré e pós operatório, relatos de pacientes, orientações para cirurgias e marcação de consultas.",
         cta: {
             href: "#about",
             label: "Saiba mais"
@@ -17,7 +19,7 @@ const footerContent = {
     },
     footerLinks: [
         {
-            heading: "Company",
+            heading: "Navege pelo site",
             links: [
                 {
                     href: "#home",
@@ -38,15 +40,11 @@ const footerContent = {
             ],
         },
         {
-            heading: "Recursos",
+            heading: "—",
             links: [
                 {
                     href: "#posts-recents",
                     label: "Blog"
-                },
-                {
-                    href: "#",
-                    label: "FAQ"
                 },
                 {
                     href: "#contact",
@@ -61,11 +59,11 @@ const footerContent = {
     ],
     contact: {
         heading: "Contato",
-        description: "Sinta-se à vontade para entrar em contato conosco caso tenha alguma dúvida, dúvida ou assistência que possa precisar.",
+        description: "Entre em contato via whatsapp ou e-mail e navegue pelas minhas redes sociais: Youtube e Instagram. Lá você encontra diversos conteúdos e atendimento personalizado.",
         address: {
-            street: "Rua República do Líbano, 1513 | Fortaleza, Ceará",
+            instagram: "@drbrunourologista",
             phone1: "+55 85 98113-7575",
-            phone2: "+55 85 98140-7575",
+            youtube: "youtube.com/@urologistabrunoferreira",
             website: "www.drbrunoferreira.com.br"
         }
     },
@@ -107,9 +105,9 @@ const Footer = () => {
                                 </h3>
                                 <ul className='p-0 m-0'>
                                     {footerLink.links.map((link, idx) => (
-                                        <li key={link.label} className='mb-3'>
+                                        <li key={link.label} className='mb-6'>
                                             <Link href={link.href}
-                                            className='group-flex items-center duration-300 transition-all ease-in-out hover:text-primary'
+                                            className='group-flex items-center flex duration-300 transition-all ease-in-out hover:text-primary'
                                             >
                                                 <span>{link.label}</span>
                                                 <span className='left-2 relative duration-300 transition-all ease-in-out opacity-0 group-hover:opacity-100 group-hover:left-3'>
@@ -131,26 +129,40 @@ const Footer = () => {
                         {footerContent.contact.description}
                     </p>
                     <ul className=''>
-                        <li className='flex items-start space-x-3 mb-5'>
-                            <HiLocationMarker className='text-xl text-primary' 
-                            />
-                            <span>{footerContent.contact.address.street}</span>
-                        </li>
-                        <li className='flex items-start space-x-3 mb-5'>
-                            <HiPhone className='text-xl text-primary' 
-                            />
-                            <span>{footerContent.contact.address.phone1}</span>
-                        </li>
-                        <li className='flex items-start space-x-3 mb-5'>
-                            <HiPhone className='text-xl text-primary' 
-                            />
-                            <span>{footerContent.contact.address.phone2}</span>
-                        </li>
-                        <li className='flex items-start space-x-3 mb-5'>
-                            <HiMiniGlobeAmericas className='text-xl text-primary' 
-                            />
-                            <span>{footerContent.contact.address.website}</span>
-                        </li>
+                        <Link href='https://www.instagram.com/drbrunourologista/
+                        ' target='blank'>
+                            <li className='flex hover:text-secondarynm items-start space-x-3 mb-5'>
+                                <AiFillInstagram className='text-xl text-primary' 
+                                />
+                                <span>{footerContent.contact.address.instagram}</span>
+                            </li>
+                        </Link>
+
+                        <Link href='tel:+5585981137575' target='blank'>
+                            <li className='flex hover:text-secondary items-start space-x-3 mb-5'>
+                                <HiPhone className='text-xl text-primary' 
+                                />
+                                <span>{footerContent.contact.address.phone1}</span>
+                            </li>
+                        </Link>
+
+
+                        <Link href='https://www.youtube.com/@urologistabrunoferreira' target='blank'>
+                            <li className='flex items-start hover:text-secondary space-x-3 mb-5'>
+                                <BiLogoYoutube className='text-xl text-primary' 
+                                />
+                                <span>{footerContent.contact.address.youtube}</span>
+                            </li>
+                        </Link>
+
+                        <Link href='https://dr-brunoferreira.vercel.app/'>
+                            <li className='flex hover:text-secondary items-start space-x-3 mb-5'>
+                                <HiMiniGlobeAmericas className='text-xl text-primary' 
+                                />
+                                <span>{footerContent.contact.address.website}</span>
+                            </li>
+                        </Link>
+
                     </ul>
                 </div>
             </div>

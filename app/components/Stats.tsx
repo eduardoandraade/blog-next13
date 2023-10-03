@@ -3,6 +3,7 @@
 import React, { useEffect } from 'react'
 import Link from 'next/link'
 import { BiChevronRight } from 'react-icons/bi'
+import { FaStar } from 'react-icons/fa';
 import AOS from 'aos'
 import "aos/dist/aos.css"
 
@@ -11,16 +12,16 @@ import "aos/dist/aos.css"
 const statContent = {
     stats: [
         {
-            number: '99,9%',
-            label: 'Soluções avançadas em medicina'
+            number: '5stars',
+            label: 'avaliação de pacientes'
         },
         {
-            number: '1.326',
-            label: 'Clientes satisfeitos'
+            number: '30',
+            label: 'tratamento para mais de 30 condições de saúde'
         },
         {
-            number: '12',
-            label: 'Artigos publicados'
+            number: '15',
+            label: 'artigos científicos e de opinião'
         },
     ],
     getStarted: {
@@ -60,7 +61,17 @@ const Stats = () => {
                                 data-aos-delay={idx}
                                 >
                                     <strong className='text-primary text-4xl xl:text-[53px] font-bold block leading-tight'>
-                                        {stat.number}
+                                        {stat.number === '5stars' ? (
+                                            <span className='flex items-center ml-1 mb-3'>
+                                                <FaStar className='w-6 h-6 bg-gold' />
+                                                <FaStar className='w-7 h-7' />
+                                                <FaStar className='w-8 h-8' />
+                                                <FaStar className='w-9 h-9' />
+                                                <FaStar className='w-11 h-11' />
+                                            </span>
+                                        ) : (
+                                            stat.number
+                                        )}
                                     </strong>
                                     <span>{stat.label}</span>
                                 </div>

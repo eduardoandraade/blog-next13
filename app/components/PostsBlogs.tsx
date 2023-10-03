@@ -48,7 +48,7 @@ export default async function PostsBlogs (){
       <div className="container px-4 mx-auto divide-gray-200">
         <div className="lg:w-5/12 mb-10 lg:mb-0">
                     {blogContent.heading.headingSubTitle && (
-                    <span className="inline-block py-0.5 z-50 text-heading font-semibold relative 
+                    <span className="inline-block py-0.5 text-heading font-semibold relative 
                         mb-5 before:content-[''] before:absolute before:w-2/3 before:left-0
                         before:top-0 before:bottom-0 before:-z-10"> 
                     {blogContent.heading.headingSubTitle}

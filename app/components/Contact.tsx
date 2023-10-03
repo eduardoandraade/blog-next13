@@ -19,7 +19,7 @@ const Contact = () => {
             <div className='max-w-4xl mx-auto text-center mb-20'>
 
                 {contentContact.heading.headingSubtitle && (
-                    <span className="inline-block py-0.5 z-50 text-heading font-semibold relative 
+                    <span className="inline-block py-0.5text-heading font-semibold relative 
                             mb-5 before:content-[''] before:absolute before:w-2/3 before:left-0
                             before:top-0 before:bottom-0 before:-z-10"> 
                         {contentContact.heading.headingSubtitle}

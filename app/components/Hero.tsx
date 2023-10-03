@@ -11,16 +11,16 @@ import "aos/dist/aos.css"
 
 const heroContent = {
     text: {
-        subheading: "Médico Especialista",
-        heading: "Dr. Bruno Ferreira Urologista & Cirurgião Geral",
-        description: "Formado na Santa Casa da Misericórdia em Fortaleza/Ce, com expertise em Cirurgia Robótica, Vídeo-Cirurgia, Cirurgia Urológica Minimamente Invasiva e Cirurgia Laparoscópica. Atualmente, estou disponível para atendimento no renomado Instituto Ariel Scafuri. Minha paixão e dedicação estão voltadas para oferecer cuidados urológicos de excelência aos meus pacientes, utilizando as mais avançadas técnicas cirúrgicas e tratamentos disponíveis.",
+        subheading: "Saúde e bem estar",
+        heading: "Dr. Bruno Ferreira Urologia e Cirurgia Robótica",
+        description: "Médico formado pela Universidade Federal do Ceará, com residência médica em urologia na Santa Casa da Misericórdia de Fortaleza, especialização em Cirurgia Urológica Minimamente Invasiva no Hospital Sírio-Libanês e em Cirurgia Robótica no Hospital Real Português. Para além das formações técnicas, a humanização e personalização dos atendimentos são um fator preponderante em meus atendimentos.",
     },
     images: {
         img1: '/images/img-4.svg',
         img2: '/images/img-2.svg',
         img3: '/images/img-6.svg',
         img4: '/images/img-7.svg',
-        img5: '/images/img-1.svg',
+        img5: '/images/cirurgia3.svg',
     }
 }
 
@@ -35,7 +35,7 @@ const Hero = () => {
       })
   return (
     <section id='home' className='py-10'>
-        <div className="container px-4 mx-auto">
+        <div className="container px-4 mx-auto mt-20">
             <div className='lg:flex justify-between items-center'>
                 <div className='lg:w-5/12 mb-10 lg:mb-0'>
                     {heroContent.text.subheading && (

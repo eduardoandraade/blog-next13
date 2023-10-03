@@ -5,9 +5,9 @@ import { AiFillSafetyCertificate } from 'react-icons/ai'
 
 const aboutContent = {
     text: {
-        headginSubTitle: 'Sobre Mim',
-        headingTitle: 'Minha Trajetória na Medicina e na Urologia',
-        description: 'Sou o Dr. Bruno Ferreira, urologista e cirurgião geral dedicado a fornecer cuidados médicos de excelência. Com formação na Santa Casa da Misericórdia de Fortaleza, minha paixão e compromisso estão voltados para a saúde urológica dos meus pacientes. Com vasta experiência em cirurgia robótica, vídeo-cirurgia, cirurgia urológica minimamente invasiva e cirurgia laparoscópica, estou comprometido em oferecer tratamentos avançados e personalizados. Sua saúde é minha prioridade, e estou aqui para fornecer os melhores cuidados em urologia.',
+        headginSubTitle: '',
+        headingTitle: 'Minha trajetória',
+        description: 'Iniciei minha história com a medicina na Universidade Federal do Ceará, na qual conheci meu professor e tutor, Dr. Ariel Scafuri. Grande homem e grande médico urologista (in memoriam). Segui para residência médica na Santa Casa da Misericórdia de Fortaleza e no Instituto Dr. José Frota (IJF). No Hospital Sírio-Libanês, realizei a especialização em Cirurgia Urológica Minimamente Invasiva, formato de procedimento que garante mais qualidade de vida aos pacientes. No Hospital Real Português, me especializei em Cirurgia Robótica, colocando a tecnologia junto da humanização e proporcionando um pós operatório seguro e mais confortável aos que a mim confiam a saúde.',
         formations: [
             {
                 title: "Universidade Federal do Ceará - Faculdade de Medicina"
@@ -20,6 +20,10 @@ const aboutContent = {
             },
             {
                 title: "Instituto Dr. José Frota - Cirurgia Geral"
+            },
+            
+            {
+                title: "Hospital Real Português - Cirurgia Robótica "
             },
         ],
         cta: {
@@ -35,14 +39,10 @@ const aboutContent = {
     },
     images: {
         img1: "/images/img-1.svg",
-        img2: "/images/img-2.svg",
-        img3: "/images/img-3.svg",
-        img4: "/images/img-6.svg"
+        img2: "/images/img-8.svg",
+        img4: "/images/img-3.svg",
+        img3: "/images/cirurgia4.svg"
     },
-    experience: {
-        year: "+20",
-        label: "anos de experiência"
-    }
 }
 
 const About = () => {
@@ -71,9 +71,9 @@ const About = () => {
                         <div className='mt-auto'>
                             <div className="flex flex-col gap-2">
                                 <div>
-                                    <div className="bg-primary w-10 h-10 lg:w-20 lg:h-20 rounded-2xl rounded-tr-[200px]"></div>
+                                    <div className="bg-secondary w-10 h-10 lg:w-20 lg:h-20 rounded-2xl rounded-tr-[200px]"></div>
                                 </div>
-                                <div>
+                                <div className='mt-3'>
                                     <Image src={aboutContent.images.img2} alt='Fotos Dr Bruno Ferreira' width={547} height={573} 
                                         className='object-cover h-full w-full rounded-lg shadow-2xl'/>
                                 </div>
@@ -112,7 +112,7 @@ const About = () => {
                     )}
 
                     {aboutContent.text.headingTitle && (
-                        <h2 className="text-heading text-2xl lg:text-4xl font-bold mb-5"> 
+                        <h2 className="text-white text-xl lg:text-4xl lg:text-heading font-bold mb-5 mt-4"> 
                             {aboutContent.text.headingTitle}
                         </h2>
                     )}

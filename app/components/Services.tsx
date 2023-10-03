@@ -3,9 +3,9 @@ import Image from 'next/image'
 
 const servicesContent = {
     heading: {
-        headingSubTitle: "Principais Especialidades",
+        headingSubTitle: "",
         headingTitle: "Serviços e Procedimentos",
-        description: "Cuidados médicos de qualidade para sua saúde urológica. Como urologista e cirurgião geral, o Dr. Bruno Ferreira está preparado para atender às suas necessidades com experiência em cirurgia robótica, vídeo-cirurgia, cirurgia urológica minimamente invasiva e cirurgia laparoscópica. Descubra como podemos ajudar você a manter sua saúde urológica em ótima forma."
+        description: "Cada quadro de saúde exige cuidados específicos para que sejam resolvidos amplamente e em sua totalidade. Idade, estilo de vida, hábitos, genética e a periodicidade na qual o paciente faz acompanhamento, são alguns dos fatores que influenciam na incidência de doenças. Conheça alguns dos casos de tratamos:"
     },
     items: [
         {
@@ -45,20 +45,19 @@ const servicesContent = {
 const Services = () => {
   return (
     <section id='services' className='py-20 bg-light'>
-        <div className='container px-4 mx-auto'>
+        <div className='container py-5 mx-auto'>
             <div className="max-w-xl mx-auto text-center mb-20">
 
-
             {servicesContent.heading.headingSubTitle && (
-                <span className="inline-block py-0.5 z-50 text-heading font-semibold relative 
-                        mb-5 before:content-[''] before:absolute before:w-2/3 before:left-0
+                <span className="inline-block py-0.5 text-heading font-semibold relative 
+                        before:content-[''] before:absolute before:w-2/3 before:left-0
                         before:top-0 before:bottom-0 before:-z-10"> 
                     {servicesContent.heading.headingSubTitle}
                 </span>
             )}
 
             {servicesContent.heading.headingTitle && (
-                <h2 className='text-heading text-2-xl lg:text-4xl font-bold mb-3'>{servicesContent.heading.headingTitle}</h2>
+                <h2 className='text-heading text-2xl lg:text-4xl font-bold mb-3'>{servicesContent.heading.headingTitle}</h2>
             )}
 
             {servicesContent.heading.description && (
